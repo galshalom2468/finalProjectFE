@@ -1,0 +1,25 @@
+:root {
+  /* Primary colors */
+  --color-slate-gray: rgb(135, 192, 249);
+  --color-white: white;
+  --color-papaya-whip: rgb(245, 189, 178);
+  --color-mint-cream: rgb(0, 0, 0);
+  --color-light-sky-blue: rgb(209, 236, 255);
+  --color-light-blue: rgb(225, 238, 255);
+  --title-blue: rgb(23, 89, 255);
+
+  
+  /* Background colors */
+  --color-beige: #ffb77c;
+
+  
+  /* Gradient backgrounds */
+  --gradient-body: linear-gradient(to bottom, var(--color-white) 10%, var(--color-light-blue) 100%);
+
+
+  /* Button colors */
+  --color-blue: rgb(0, 38, 255);
+  
+
+
+} 

@@ -1,0 +1,36 @@
+.btn {
+    display: inline-block; 
+    padding: 10px 20px; 
+    border: 1px solid transparent; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    text-align: center; 
+    text-decoration: none; 
+    cursor: pointer; 
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out; 
+    white-space: nowrap; 
+  }
+  
+  .btn-blue {
+    background-color: #0065d1;
+    color: #ffffff; 
+    border-color: #007bff; 
+  }
+  
+  .btn-blue:hover {
+    background-color: #0056b3; 
+    border-color: #0056b3;
+  }
+
+.btn-white {
+    background-color: #ffffff; 
+    color: #0066d2; 
+    border: 1px solid #007bff;
+  }
+  
+  .btn-white:hover {
+    background-color: #ecf5ff; 
+    color: #0056b3; 
+    border-color: #0056b3;
+  }

@@ -1,0 +1,127 @@
+.sectionTwo {
+    background-color: #ffffff;
+  }
+  
+  .contentWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 0 auto;
+  }
+  
+  .textBlock {
+    flex: 1;
+    text-align: center;
+    direction: rtl;
+    width: 100%;
+  }
+  
+  .sectionTwoTitle {
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .sectionTwoSecondTitle {
+    font-size: 1.8rem;
+    color: rgb(91, 91, 91);
+    margin-bottom: 50px;
+    text-align: center;
+    line-height: 1.7;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .featuresGrid {    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    direction: rtl;
+  }
+  
+  .featureCard {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 25px 30px;
+    text-align: right;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  .featureIconContainer {
+    width: 50px;
+    height: 35px;
+    background-color: #e7f3ff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .iconPlaceholder {
+    font-size: 26px;
+  }
+  
+  .featureCardTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #181a1d;
+    margin-bottom: 10px;
+  }
+  
+  .featureCardText {
+    font-size: 1.8rem;
+    color: #6c757d;
+    line-height: 1.65;
+    flex-grow: 1;
+  }
+  
+  .featureCard:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); 
+  }
+  
+  @media (max-width: 992px) {
+    .featuresGrid {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .sectionTwoTitle {
+      font-size: 2.8rem;
+    }
+    .sectionTwoSecondTitle {
+      font-size: 1.6rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .featuresGrid {
+      grid-template-columns: 1fr;
+    }
+    .featureCard {
+      padding: 20px 25px;
+      align-items: center;
+      text-align: center;
+    }
+    .sectionTwoTitle {
+      font-size: 2.4rem;
+    }
+    .sectionTwoSecondTitle {
+      font-size: 1.4rem;
+    }
+  }
