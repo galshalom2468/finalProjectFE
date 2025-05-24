@@ -1,5 +1,3 @@
-import styles from '../../styles/text.module.css';
-
 export function Help() {
-  return <h1 className={styles.title}>help</h1>;
-} 
+    return <h1>Help is where the heart is :)</h1>;
+  }
