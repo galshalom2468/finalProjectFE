@@ -15,5 +15,8 @@ export const Links = () => (
     <li>
       <Link to="/help">help</Link>
     </li>
+    <li>
+      <Link to="/login">login</Link>
+    </li>
   </ul>
 ); 

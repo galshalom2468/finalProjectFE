@@ -7,7 +7,7 @@ export function Explanation() {
     <section className={`${styles.explanations}`}>
       <div className={styles.contentWrapper}>
         <div className={styles.textBlock}>
-          <h1 className={styles.sectionOneTitle}>
+          <h1 className={styles.explanation_title}>
             למד חכם יותר עם<br/>
             <span style={{ color: 'var(--title-blue)' }}>סיכומים</span> מעולים
           </h1>

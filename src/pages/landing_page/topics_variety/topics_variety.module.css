@@ -1,10 +1,10 @@
-.sectionThree {
+.topics_variety {
     background-color: #f8f9fa; 
     padding-top: 80px; 
     padding-bottom: 80px;
   }
   
-  .sectionThreeTitle {
+  .topics_variety_title {
     font-size: 4rem; 
     font-weight: bold;
     margin-bottom: 15px;
@@ -14,7 +14,7 @@
     margin-right: auto;
   }
   
-  .sectionThreeSubtitle {
+  .topics_variety_subtitle {
     font-size: 2.1rem; 
     color: #6c757d; 
     margin-bottom: 50px; 
@@ -79,6 +79,7 @@
   
   .buttonContainer {
     margin-top: 50px; 
+    text-align: center;
   }
   
   @media (max-width: 1150px) { 
@@ -110,10 +111,10 @@
      .categoryCount {
        font-size: 0.85rem;
      }
-      .sectionThreeTitle {
+      .topics_variety_title {
       font-size: 2.4rem;
     }
-    .sectionThreeSubtitle {
+    .topics_variety_subtitle {
       font-size: 1.3rem;
     }
   }

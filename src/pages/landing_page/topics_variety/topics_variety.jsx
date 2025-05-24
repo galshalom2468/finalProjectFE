@@ -5,10 +5,10 @@ import styles from './topics_variety.module.css';
 export function Topics_variety() {
   return (
     <section id="categories" className={styles.topics_variety}>
-      <h2 className={styles.sectionThreeTitle}>
+      <h2 className={styles.topics_variety_title}>
         גלה סיכומים <span style={{ color: 'var(--title-blue)' }}>בכל נושא</span>
       </h2>
-      <h3 className={styles.sectionThreeSubtitle}>
+      <h3 className={styles.topics_variety_subtitle}>
         מגוון רחב של סיכומים בנושאים שונים מחכים לך. בחר את התחום שלך והתחל ללמוד
       </h3>
       <div className={styles.categoriesGrid}>

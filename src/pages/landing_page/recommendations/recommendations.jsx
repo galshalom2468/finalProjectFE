@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from "./recommendations.module.css";
+import {FaStar, FaRegStar} from "react-icons/fa";
 
 const testimonials = [
   {
-    name: "ינון ברוך",
+    name: "דניאל לוי",
     title: "סטודנט להנדסה",
     quote: "פלטפורמה מעולה עם תוכן איכותי. עזר לי להתמודד עם קורסים מאתגרים ולהבין חומר מורכב בקלות רבה יותר.",
-    rating: 5,
+    rating: 4,
     image: "placeholder-avatar-1.png"
   },
   {
@@ -17,14 +18,14 @@ const testimonials = [
     image: "placeholder-avatar-2.png"
   },
   {
-    name: "דניאל לוי",
+    name: "יונתן ברוך",
     title: "סטודנט לרפואה",
     quote: "סיכומים שינו את חיי האקדמיים. אני חוסך שעות של עבודה והסיכומים תמיד מדויקים ועדכניים. ממליץ בחום!",
-    rating: 5,
+    rating: 3,
     image: "placeholder-avatar-3.png"
   },
   {
-    name: "דניאל לוי",
+    name: "נועה שלום",
     title: "סטודנט לרפואה",
     quote: "סיכומים שינו את חיי האקדמיים. אני חוסך שעות של עבודה והסיכומים תמיד מדויקים ועדכניים. ממליץ בחום!",
     rating: 5,
@@ -33,31 +34,39 @@ const testimonials = [
 ];
 
 const renderStars = (rating) => {
-  let stars = '';
-  for (let i = 0; i < 5; i++) {
-    stars += (i < rating) ? '★' : '☆';
-  }
-  return stars;
+  return (
+    <>
+      {[...Array(5)].map((_, i) =>
+        i < rating ? (
+          <FaStar key={i} style={{ color: "#077bff", fontSize: "1.8rem", marginLeft: "0.1em" }} />
+        ) : (
+          <FaRegStar key={i} style={{ color: "#077bff", fontSize: "1.8rem", marginLeft: "0.1em" }} />
+        )
+      )}
+    </>
+  );
 };
 
 export function Recommendation() {
   return (
     <section id="testimonials" className={styles.recommendations}>
-      <h2 className={styles.sectionFourTitle}>מה אומרים עלינו?</h2>
-      <h3 className={styles.sectionFourSubtitle}>
+      <h2 className={styles.recommendations_title}>מה אומרים עלינו?</h2>
+      <h3 className={styles.recommendations_subtitle}>
         אלפי תלמידים וסטודנטים כבר משתמשים בסיכומים שלנו. הנה מה שיש להם להגיד
       </h3>
       <div className={styles.testimonialsGrid}>
-        {testimonials.map((testimonial, index) => (
+        {testimonials.slice(0, 4).map((testimonial, index) => (
           <div key={index} className={styles.testimonialCard}>
-            <img
-              src={testimonial.image}
-              alt={`תמונה של ${testimonial.name}`}
-              className={styles.authorImage}
-            />
-            <div>
-              <p className={styles.authorName}>{testimonial.name}</p>
-              <p className={styles.authorTitle}>{testimonial.title}</p>
+            <div className={styles.authorRow}>
+              <img
+                src={testimonial.image}
+                alt={`תמונה של ${testimonial.name}`}
+                className={styles.authorImage}
+              />
+              <div className={styles.authorInfo}>
+                <p className={styles.authorName}>{testimonial.name}</p>
+                <p className={styles.authorTitle}>{testimonial.title}</p>
+              </div>
             </div>
             <div
               className={styles.ratingStars}
@@ -66,11 +75,9 @@ export function Recommendation() {
               {renderStars(testimonial.rating)}
             </div>
             <p className={styles.quoteText}>"{testimonial.quote}"</p>
-            <div className={styles.authorInfo}></div>
           </div>
         ))}
       </div>
     </section>
   );
 }
-

@@ -9,11 +9,11 @@ export function Bottom_bar() {
       <div className={styles.top}>
         <div className={styles.brand}>
           <h1 className={styles.logo}>
+          <span className={styles.logoSquare} />
             סיכומים
-            <span className={styles.logoSquare} />
           </h1>
           <p className={styles.tagline}>
-            הדרך הטובה ביותר<br/>ללמוד חכם יותר ולהצליח בלימודים.
+            הדרך הטובה ביותר ללמוד חכם יותר ולהצליח בלימודים.
           </p>
           <div className={styles.social}>
             <a href="#"><FaYoutube /></a>
@@ -56,12 +56,13 @@ export function Bottom_bar() {
       </div>
 
       <div className={styles.bottom}>
+      <p className={styles.copy}>© 2024 סיכומים. כל הזכויות שמורות.</p>
         <ul className={styles.bottomLinks}>
           <li><a href="#">תנאי שימוש</a></li>
           <li><a href="#">מדיניות פרטיות</a></li>
           <li><a href="#">עזרה ותמיכה</a></li>
         </ul>
-        <p className={styles.copy}>© 2024 סיכומים. כל הזכויות שמורות.</p>
+     
       </div>
     </footer>
   );

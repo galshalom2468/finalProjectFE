@@ -1,0 +1,166 @@
+.loginPage {
+    min-height: 100vh;
+    background: #f7f9fb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    font-family: 'Heebo', Arial, sans-serif;
+    font-size: 1.25rem;
+  }
+  
+  .logoSection {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  
+  .logoSquare {
+    width: 48px;
+    height: 48px;
+    background: #3b83f6;
+    border-radius: 8px;
+    display: inline-block;
+  }
+  
+  .logoText {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #222;
+    letter-spacing: 1px;
+  }
+  
+  .title {
+    font-size: 2.7rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  
+  .subtitle {
+    color: #444;
+    font-size: 1.75rem;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  
+  .link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.75rem;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
+  .loginForm {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    padding: 40px 32px 32px 32px;
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  
+  .label {
+    font-size: 1.75rem;
+    color: #222;
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 16px 48px 16px 16px;
+    border: 1.5px solid #e0e7ef;
+    border-radius: 8px;
+    font-size: 1.55rem;
+    background: #f7f9fb;
+    outline: none;
+    transition: border 0.2s;
+    direction: rtl;
+  }
+  
+  .input:focus {
+    border-color: #3b83f6;
+    background: #fff;
+  }
+  
+  .inputIcon {
+    position: absolute;
+    right: 16px;
+    color: #b0b8c1;
+    font-size: 1.5rem;
+  }
+  
+  .forgotLink {
+    color: #2563eb;
+    font-size: 1.55rem;
+    text-decoration: none;
+    margin-top: 4px;
+    align-self: flex-end;
+  }
+  
+  .forgotLink:hover {
+    text-decoration: underline;
+  }
+  
+  .optionsRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    gap: 12px;
+  }
+  
+  .checkboxLabel {
+    font-size: 1.55rem;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .checkbox {
+    accent-color: #3b83f6;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .loginButton {
+    width: 100%;
+    background: #3b83f6;
+    color: #fff;
+    font-size: 1.55rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 0;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .loginButton:hover {
+    background: #2563eb;
+  }
+  
+  .registerRow {
+    text-align: center;
+    color: #444;
+    font-size: 1.75rem;
+  }

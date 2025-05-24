@@ -1,4 +1,4 @@
-.sectionTwo {
+.detailed_explanation {
     background-color: #ffffff;
   }
   
@@ -8,7 +8,6 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 40px;
-    margin: 0 auto;
   }
   
   .textBlock {
@@ -18,7 +17,7 @@
     width: 100%;
   }
   
-  .sectionTwoTitle {
+  .detailed_explanation_title {
     font-size: 3.2rem;
     font-weight: bold;
     margin-bottom: 20px;
@@ -26,9 +25,10 @@
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 30px;
   }
   
-  .sectionTwoSecondTitle {
+  .detailed_explanation_subtitle {
     font-size: 1.8rem;
     color: rgb(91, 91, 91);
     margin-bottom: 50px;
@@ -41,10 +41,10 @@
   
   .featuresGrid {    
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 25px;
-    width: 100%;
-    max-width: 1200px;
+    width: 90%;
+    max-width: 1400px;
     margin: 0 auto;
     direction: rtl;
   }
@@ -101,10 +101,10 @@
     .featuresGrid {
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
-    .sectionTwoTitle {
+    .detailed_explanation_title {
       font-size: 2.8rem;
     }
-    .sectionTwoSecondTitle {
+    .detailed_explanation_subtitle {
       font-size: 1.6rem;
     }
   }
@@ -118,10 +118,10 @@
       align-items: center;
       text-align: center;
     }
-    .sectionTwoTitle {
+    .detailed_explanation_title {
       font-size: 2.4rem;
     }
-    .sectionTwoSecondTitle {
+    .detailed_explanation_subtitle {
       font-size: 1.4rem;
     }
   }

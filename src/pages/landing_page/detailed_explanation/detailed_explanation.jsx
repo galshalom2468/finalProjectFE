@@ -6,10 +6,10 @@ export function Detailed_explanation() {
     <section className={styles.detailed_explanation}>
       <div className={styles.contentWrapper}>
         <div className={styles.textBlock}>
-          <h2 className={styles.sectionTwoTitle}>
+          <h2 className={styles.detailed_explanation_title}>
             למה לבחור בפלטפורמת <span style={{ color: 'var(--title-blue)' }}>סיכומים</span> שלנו?
           </h2>
-          <h3 className={styles.sectionTwoSecondTitle}>
+          <h3 className={styles.detailed_explanation_subtitle}>
             אנחנו מציעים את הכלים והמשאבים הטובים ביותר כדי לעזור לך להצליח בלימודים
           </h3>
           <div className={styles.featuresGrid}>

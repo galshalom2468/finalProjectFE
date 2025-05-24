@@ -2,10 +2,20 @@
   --title-blue: rgb(0, 38, 255);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+section {
+  scroll-margin-top: 155px; 
+}
+
 .landingPageContainer {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  gap: 48px; 
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .section {
@@ -15,14 +25,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.sectionFour {
-  background-color: #81d4fa;
-}
-
-.sectionFive {
-  background-color: #51c8ff;
 }
 
 .secondaryNav {
