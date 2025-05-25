@@ -1,0 +1,370 @@
+.homePage {
+    background: #f7f9fb;
+    min-height: 90vh;
+    font-family: Arial, sans-serif;
+    direction: rtl;
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background: #fff;
+    border-bottom: 1px solid #e0e7ef;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 90px 32px 15px 32px;
+  }
+  
+  .header .logoSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .header .logoSquare {
+    width: 32px;
+    height: 32px;
+    background: #3b83f6;
+    border-radius: 8px;
+    display: inline-block;
+  }
+  
+  .header .logoText {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #222;
+  }
+  
+  .searchContainer {
+    position: relative;
+    width: 340px;
+  }
+  
+  .searchInput {
+    width: 100%;
+    padding: 10px 20px 10px 10px;
+    border: 1.5px solid #e0e7ef;
+    border-radius: 8px;
+    font-size: 1.8rem;
+    background: #f7f9fb;
+    outline: none;
+    direction: rtl;
+    text-align: right;
+  }
+  
+  .searchIcon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #b0b8c1;
+    font-size: 1.2rem;
+  }
+  
+  .userSection {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  
+  .userName {
+    font-weight: bold;
+    color: #222;
+  }
+  
+  .notifications {
+    position: relative;
+    font-size: 2rem;
+    color: #3b83f6;
+  }
+  
+  .badge {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    background: #e53935;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    padding: 2px 7px;
+    font-weight: bold;
+  }
+  
+  .logout {
+    color: #888;
+    cursor: pointer;
+    font-size: 1.6rem;
+  }
+
+  .mainContent {
+    padding: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .greetingSection {
+    margin-bottom: 32px;
+  }
+  
+  .greetingSection h1 {
+    font-size: 2.1rem;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  
+  .greetingSection p {
+    color: #6ba0f5;
+    font-size: 1.5rem;
+  }
+  
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 32px;
+  }
+  
+  .latestCard {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .savedCard {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  .recommendationsCard {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  .topicsCard {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    padding: 24px;
+    min-height: 200px;
+  }
+  
+  .cardTitle {
+    font-size: 2.7rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .cardSubtitle {
+    color: #888;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .cardHeaderRow {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  
+  .savedList, .latestList, .topicsList {
+    list-style: none;
+    padding: 5px;
+    margin: 0 0 12px 0;
+  }
+  
+  .savedList li, .latestList li, .topicsList li, .recommendationsList li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 1.4rem;
+  }
+  
+  .savedList li:last-child, .latestList li:last-child, .topicsList li:last-child {
+    border-bottom: none;
+  }
+  
+  .savedMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    direction: ltr;
+  }
+  
+  .subject {
+    text-align: right;
+    flex: 1;
+    font-size: 1.2rem;
+    color: #3d3d3d;
+    padding-right: 5px;
+  }
+  
+  .date {
+    text-align: left;
+    flex: 1;
+    direction: ltr;
+    font-size: 1.2rem;
+    color: #3d3d3d;
+  }
+  
+  .bookmarkIcon {
+    color: #3b83f6;
+    margin-right: 2px;
+    margin-left: 0%;
+  }
+  
+  .latestTitle {
+    font-weight: bold;
+  }
+  
+  .latestPages {
+    color: #3b83f6;
+    font-size: 1.2rem;
+    margin-right: 12px;
+  }
+  
+
+  .secondaryButton {
+    background: #fff;
+    border: 1.5px solid #3b83f6;
+    color: #3b83f6;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 1.45rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s, color 0.2s;
+  }
+  
+  .secondaryButton:hover {
+    background: #3b83f6;
+    color: #fff;
+  }
+  
+  .recommendationsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 12px;
+  }
+  
+  .recommendationCard {
+    background: #f7f9fb;
+    border-radius: 10px;
+    padding: 14px 18px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .recommendationMeta {
+    color: #888;
+    font-size: 1.25rem;
+  }
+  
+  .stars {
+    color: #077bff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+  }
+  
+
+  .footer {
+    background: #f7f9fb;
+    border-top: 1px solid #e0e7ef;
+    padding: 25px;
+    font-size: 1.55rem;
+    color: #626262;
+  }
+  
+  .footerContent {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    direction: rtl;
+    padding: 0 24px;
+  }
+  
+  .footerBrand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .footer .logoSquare {
+    width: 24px;
+    height: 24px;
+    background: #3b83f6;
+    border-radius: 6px;
+    display: inline-block;
+  }
+  
+  .footer .logoText {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000000;
+    letter-spacing: 1px;
+  }
+  
+  .footerNav {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  
+  .footerNav a {
+    color: #444;
+    text-decoration: none;
+    padding: 0 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .footerNav a:hover {
+    color: #3b83f6;
+  }
+  
+  .footerDivider {
+    color: #ccc;
+    font-size: 0.9em;
+    user-select: none;
+  }
+  
+
+  @media (max-width: 1100px) {
+    .gridContainer {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 800px) {
+    .gridContainer {
+      grid-template-columns: 1fr;
+    }
+    .mainContent {
+      padding: 16px;
+    }
+    .header {
+      flex-direction: column;
+      gap: 16px;
+      padding: 16px 8px 0 8px;
+    }
+    .searchContainer {
+      width: 100%;
+      margin: 0 0 12px 0;
+    }
+  }

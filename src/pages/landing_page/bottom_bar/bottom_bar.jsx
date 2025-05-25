@@ -38,10 +38,9 @@ export function Bottom_bar() {
           <h3>קישורים מהירים</h3>
           <ul>
             <li><a href="#">דף הבית</a></li>
-            <li><a href="#">יתרונות</a></li>
-            <li><a href="#">נושאים</a></li>
-            <li><a href="#">המלצות</a></li>
-            <li><a href="#">מחירים</a></li>
+            <li><a href="#detailed_explanation">יתרונות</a></li>
+            <li><a href="#topics_variety">נושאים</a></li>
+            <li><a href="#recommendations">המלצות</a></li>
           </ul>
         </div>
 

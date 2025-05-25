@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./login.module.css";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export function Login() {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate('/home');
+    setError("");
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate('/home');
+    } catch (err) {
+      setError("אימייל או סיסמה שגויים");
+    }
   };
 
   return (
@@ -29,6 +40,9 @@ export function Login() {
               type="email"
               placeholder="הזן את כתובת האימייל שלך"
               className={styles.input}
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              required
             />
             <FaEnvelope className={styles.inputIcon} />
           </div>
@@ -41,6 +55,9 @@ export function Login() {
               type="password"
               placeholder="הזן את הסיסמה שלך"
               className={styles.input}
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              required
             />
           </div>
         </label>
@@ -51,6 +68,7 @@ export function Login() {
           </label>
           <a href="#" className={styles.forgotLink}>שכחת סיסמה?</a>
         </div>
+        {error && <div style={{ color: "red", textAlign: "center" }}>{error}</div>}
         <button type="submit" className={styles.loginButton}>התחבר</button>
         <div className={styles.registerRow}>
           אין לך חשבון? <a href="#" className={styles.link} onClick={() => navigate('/register')}>הרשם כאן</a>
