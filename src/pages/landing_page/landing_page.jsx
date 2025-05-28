@@ -30,7 +30,7 @@ export function LandingPage() {
         </div>
         <div className={landingPageStyles.navButtonsContainer}>
           <button className="btn btn-white" onClick={() => navigate('/login')}>התחברות</button>
-          <button className="btn btn-blue">הרשמה</button>
+          <button className="btn btn-blue" onClick={() => navigate('/register')}>הרשמה</button>
         </div>
       </nav>
       </nav>

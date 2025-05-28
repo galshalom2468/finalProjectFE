@@ -8,6 +8,7 @@ import LatestSummaries from "./latest_summaries/latast_summaries";
 import SavedSummaries from "./saved_summaries/saved_summaries";
 import PersonalizedRecommendations from "./personalized_recom/presonalized_recom";
 import PopularTopics from "./popular_topics/populartopics";
+import {latestSummaries, savedSummaries, recommendations, topics} from "./latest_summaries/latast_summaries";
 
 export function Home() {
   const [user, setUser] = useState(null);
@@ -26,30 +27,6 @@ export function Home() {
     await signOut(auth);
     navigate("/login");
   };
-
-
-  const latestSummaries = [
-    { id: 1, title: "מבוא לאלגברה לינארית", subject: "מתמטיקה", date: "לפני 2 שעות" },
-    { id: 2, title: "היסטוריה של מלחמת העולם השנייה", subject: "היסטוריה", date: "לפני יום" },
-    { id: 3, title: "מושגי יסוד בפיזיקה קוונטית", subject: "פיזיקה", date: "לפני 3 ימים" },
-  ];
-  const savedSummaries = [
-    { id: 1, title: "אלגוריתמים", subject: "מתמטיקה", date: "15.04.25" },
-    { id: 2, title: "זמנים בספרות המודרנית", subject: "ספרות", date: "10.04.25" },
-    { id: 3, title: "עקרונות הכימיה האורגנית", subject: "כימיה", date: "05.04.25" },
-  ];
-  const recommendations = [
-    { id: 1, title: "מבנה מערכת העיכול האנושית", stars: 5 },
-    { id: 2, title: "עקרונות הפסיכולוגיה הקוגניטיבית", stars: 4 },
-    { id: 3, title: "מהפכת התעשייה ותוצאותיה", stars: 5 },
-    { id: 4, title: "מבוא לתכנות מונחה עצמים", stars: 4 },
-  ];
-  const topics = [
-    { id: 1, topic: "מתמטיקה", count: 450 },
-    { id: 2, topic: "פיזיקה", count: 320 },
-    { id: 3, topic: "היסטוריה", count: 420 },
-    { id: 4, topic: "אנגלית", count: 380 },
-  ];
 
   return (
     <div className={styles.homePage}>
@@ -77,7 +54,7 @@ export function Home() {
       <main className={styles.mainContent}>
         <div className={styles.greetingSection}>
           <h1>שלום, {userName}!</h1>
-          <p>נותרו לך 7 סיכומים להשלמת השבוע</p>
+          <p>נותרו לך 7 סיכומים להשלים השבוע</p>
         </div>
         <div className={styles.gridContainer}>
           <section className={styles.latestCard}>

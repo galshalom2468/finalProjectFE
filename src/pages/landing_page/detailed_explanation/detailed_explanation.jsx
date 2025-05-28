@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './detailed_explanation.module.css';
+import { FiStar, FiSearch, FiUser, FiClock, FiCheck, FiFileText } from "react-icons/fi";
 
 export function Detailed_explanation() {
   return (
@@ -15,7 +16,9 @@ export function Detailed_explanation() {
           <div className={styles.featuresGrid}>
             <div className={styles.featureCard}>
               <div className={styles.featureIconContainer}>
-                <span className={styles.iconPlaceholder}>📄</span>
+                <span className={styles.iconPlaceholder}>
+                  <FiFileText />
+                </span>
               </div>
               <h4 className={styles.featureCardTitle}>תוכן איכותי</h4>
               <p className={styles.featureCardText}>
@@ -24,7 +27,9 @@ export function Detailed_explanation() {
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureIconContainer}>
-                <span className={styles.iconPlaceholder}>🔍</span>
+                <span className={styles.iconPlaceholder}>
+                  <FiSearch />
+                </span>
               </div>
               <h4 className={styles.featureCardTitle}>חיפוש מתקדם</h4>
               <p className={styles.featureCardText}>
@@ -33,7 +38,9 @@ export function Detailed_explanation() {
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureIconContainer}>
-                <span className={styles.iconPlaceholder}>⭐</span>
+                <span className={styles.iconPlaceholder}>
+                  <FiStar />
+                </span>
               </div>
               <h4 className={styles.featureCardTitle}>דירוג קהילתי</h4>
               <p className={styles.featureCardText}>
@@ -42,7 +49,9 @@ export function Detailed_explanation() {
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureIconContainer}>
-                <span className={styles.iconPlaceholder}>⏱️</span>
+                <span className={styles.iconPlaceholder}>
+                  <FiClock />
+                </span>
               </div>
               <h4 className={styles.featureCardTitle}>חסכון בזמן</h4>
               <p className={styles.featureCardText}>
@@ -51,7 +60,9 @@ export function Detailed_explanation() {
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureIconContainer}>
-                <span className={styles.iconPlaceholder}>👤</span>
+                <span className={styles.iconPlaceholder}>
+                  <FiUser />
+                </span>
               </div>
               <h4 className={styles.featureCardTitle}>התאמה אישית</h4>
               <p className={styles.featureCardText}>
@@ -60,7 +71,9 @@ export function Detailed_explanation() {
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureIconContainer}>
-                <span className={styles.iconPlaceholder}>✔️</span>
+                <span className={styles.iconPlaceholder}>
+                  <FiCheck />
+                </span>
               </div>
               <h4 className={styles.featureCardTitle}>גישה בכל מקום</h4>
               <p className={styles.featureCardText}>
