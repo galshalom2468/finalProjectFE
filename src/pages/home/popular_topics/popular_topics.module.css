@@ -6,6 +6,10 @@
     min-height: 200px;
     direction: rtl;
   }
+  .card:hover {
+    box-shadow: 0 3px 34px rgba(0,0,0,0.10);
+  }
+
   .header {
     margin-bottom: 12px;
   }
@@ -20,16 +24,35 @@
   }
   .list li {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #f0f0f0;
-    padding: 14px 0;
+    padding: 18px 0;
     font-size: 1.2rem;
+    direction: rtl;
   }
+
   .topic {
+    flex: 2;
+    text-align: right;
     font-weight: bold;
     color: #222;
+    margin-left: 16px;
+    font-size: 1.6rem;
   }
+
+  .list li:hover {
+    background-color: #edf2ff;
+    cursor: pointer;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .count {
+    flex: 1;
+    text-align: left;
     color: #3b83f6;
+    font-size: 1.4rem;
   }

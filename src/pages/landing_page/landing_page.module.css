@@ -35,7 +35,7 @@ section {
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  top: 70px;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 1030;
@@ -62,9 +62,9 @@ section {
   flex: 1;
   display: flex;
   justify-content: flex-start;
-  margin-right: 80px;
+  margin-right: 8px;
   font-size: 3rem;
-  gap: 20px;
+  gap: 2px;
   font-weight: bold;
   align-items: center;
 }
@@ -113,4 +113,59 @@ section {
   font-weight: normal;
   font-family: "Griffy", cursive;
   color: var(--color-papaya-whip);
+}
+
+@media (max-width: 600px) {
+  .landingPageContainer {
+    gap: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .section {
+    padding: 32px 6px;
+    font-size: 1rem;
+  }
+
+  .secondaryNav {
+    flex-direction: column;
+    padding: 6px 4px;
+    gap: 8px;
+    top: 0px;
+    min-height: 44px;
+    font-size: 1.1rem;
+  }
+
+  .navLogoContainer {
+    font-size: 1.5rem;
+    margin-right: 0;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .navLogo {
+    max-width: 32px;
+  }
+
+  .navLinksContainer {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 1.1rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .navButtonsContainer {
+    flex-direction: column;
+    gap: 6px;
+    margin-left: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container h1 {
+    font-size: 1.5rem;
+  }
+
 }

@@ -5,7 +5,13 @@
     padding: 24px;
     min-height: 260px;
     direction: rtl;
+    min-width: 100px;
+    width: 100%;
   }
+  .card:hover {
+    box-shadow: 0 3px 34px rgba(0,0,0,0.10);
+  }
+
   .header {
     margin-bottom: 12px;
   }
@@ -44,6 +50,14 @@
     margin-right: 16px;
     font-size: 1.4rem;
   }
+  .list li:hover {
+    background-color: #edf2ff;
+    cursor: pointer;
+    border-radius: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
   .dateIcon {
     flex: 1;
     display: flex;
@@ -53,13 +67,33 @@
     min-width: 90px;
   }
   .date {
-    color: #222;
-    font-size: 1.1em;
-    margin-left: 4px;
+    flex: 1;
+    text-align: left;
+    color: #3b83f6;
     font-size: 1.4rem;
   }
   .bookmarkIcon {
     color: #3b83f6;
     font-size: 1.3em;
     margin-left: 10px;
+  }
+  @media (max-width: 600px) {
+    .list li {
+      min-width: 0;
+    }
+    .summaryTitle, .subject, .dateIcon, .date {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      min-width: 0;
+      max-width: 80px; 
+      font-size: 1rem;
+    }
+    .bookmarkIcon {
+      flex-shrink: 0;
+      min-width: 1.3em;
+      min-height: 1.3em;
+      font-size: 1em;
+      margin-left: 6px;
+    }
   }

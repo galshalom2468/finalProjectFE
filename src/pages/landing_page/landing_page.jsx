@@ -14,7 +14,6 @@ export function LandingPage() {
   return (
     <>
       <nav className={landingPageStyles.secondaryNav} dir="rtl">
-      <nav className={landingPageStyles.secondaryNav} dir="rtl">
         <div className={landingPageStyles.navLogoContainer}>
           <img
             src={logo}
@@ -33,7 +32,7 @@ export function LandingPage() {
           <button className="btn btn-blue" onClick={() => navigate('/register')}>הרשמה</button>
         </div>
       </nav>
-      </nav>
+      
 
       <div className={landingPageStyles.landingPageContainer}>
   <Explanation />

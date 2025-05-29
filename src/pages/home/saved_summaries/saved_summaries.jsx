@@ -2,6 +2,12 @@ import React from "react";
 import styles from "./saved_summaries.module.css";
 import { FaBookmark } from "react-icons/fa";
 
+export const savedSummaries = [
+  { id: 1, title: "מבוא לאלגברה לינארית", subject: "מתמטיקה", date: "לפני 2 שעות" },
+  { id: 2, title: "היסטוריה של מלחמת העולם השנייה", subject: "היסטוריה", date: "לפני יום" },
+  { id: 3, title: "מושגי יסוד בפיזיקה", subject: "פיזיקה", date: "לפני 3 ימים" },
+];
+
 export default function SavedSummaries({ summaries }) {
   return (
     <div className={styles.card}>

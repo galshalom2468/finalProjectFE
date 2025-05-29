@@ -4,11 +4,12 @@ import styles from "./home.module.css";
 import { FaBell, FaSearch, FaSignOutAlt } from "react-icons/fa"; 
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
-import LatestSummaries from "./latest_summaries/latast_summaries";
-import SavedSummaries from "./saved_summaries/saved_summaries";
-import PersonalizedRecommendations from "./personalized_recom/presonalized_recom";
-import PopularTopics from "./popular_topics/populartopics";
-import {latestSummaries, savedSummaries, recommendations, topics} from "./latest_summaries/latast_summaries";
+import LatestSummaries, { latestSummaries } from "./latest_summaries/latest_summaries";
+import SavedSummaries, { savedSummaries } from "./saved_summaries/saved_summaries";
+import PersonalizedRecommendations, { recommendations } from "./personalized_recom/presonalized_recom";
+import PopularTopics, { topics } from "./popular_topics/populartopics";
+import FooterHome from "./footer_home/footer_home";
+
 
 export function Home() {
   const [user, setUser] = useState(null);
@@ -64,28 +65,14 @@ export function Home() {
             <SavedSummaries summaries={savedSummaries} />
           </section>
           <section className={styles.recommendationsCard}>
-            <PersonalizedRecommendations recommendations={recommendations} />
+            <PersonalizedRecommendations summaries={recommendations} />
           </section>
           <section className={styles.topicsCard}>
             <PopularTopics topics={topics} />
           </section>
         </div>
       </main>
-      <footer className={styles.footer}>
-        <div className={styles.footerContent}>
-          <div className={styles.footerBrand}>
-            <span className={styles.logoSquare}></span>
-            <span className={styles.logoText}>סיכומים</span>
-          </div>
-          <nav className={styles.footerNav}>
-            <a href="/terms">תנאי שימוש</a>
-            <span className={styles.footerDivider}>|</span>
-            <a href="/privacy">פרטיות</a>
-            <span className={styles.footerDivider}>|</span>
-            <a href="/help">עזרה</a>
-          </nav>
-        </div>
-      </footer>
+      <FooterHome />
     </div>
   );
 }

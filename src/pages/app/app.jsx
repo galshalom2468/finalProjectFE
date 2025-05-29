@@ -1,20 +1,14 @@
 import { Routes, Route } from "react-router-dom";
-import { TopBar } from "../top-bar/top-bar";
 import { Home as HomePage } from "../home/home";
 import { User as UserPage } from "../user/user";
 import { LandingPage } from "../landing_page/landing_page";
 import { Help as HelpPage } from "../help/help";
 import { Login } from "../login/login.jsx"; 
 import { Register } from "../register/register.jsx";
-import { Links } from "../links/links";
+
 
 export const App = () => (
-  <>
-    <div>
-      <TopBar>
-        <Links />
-      </TopBar>
-    </div>
+  <div>
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/Home" element={<HomePage />} />
@@ -25,5 +19,5 @@ export const App = () => (
       <Route path="/register" element={<Register />} />
       <Route path="*" element={<div>404 Page Not Found</div>} />
     </Routes>
-  </>
+    </div>
 ); 
