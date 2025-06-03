@@ -14,14 +14,14 @@
     margin-bottom: 12px;
   }
   .title {
-    font-size: 2rem;
+    font-size: 2.8rem;
     font-weight: bold;
   }
   .list {
     list-style: none;
-    padding: 0;
     margin: 0;
   }
+
   .list li {
     display: flex;
     flex-direction: row;
@@ -31,6 +31,7 @@
     padding: 18px 0;
     font-size: 1.2rem;
     direction: rtl;
+    margin-bottom: 10px;
   }
 
   .topic {
@@ -43,7 +44,6 @@
   }
 
   .list li:hover {
-    background-color: #edf2ff;
     cursor: pointer;
     border-radius: 10px;
     padding-left: 10px;
@@ -56,3 +56,37 @@
     color: #3b83f6;
     font-size: 1.4rem;
   }
+  .buttonWrapper {
+    text-align: left; 
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out; 
+    padding-top: 10px;
+  }
+  .discoverAllButton {
+    background-color: #ffffff; 
+    color: #0066d2; 
+    border: 1px solid #007bff;
+    padding: 10px 40px; 
+    border-radius: 5px; 
+    font-size: 15px; 
+    text-align: center; 
+    cursor: pointer; 
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out; 
+  }
+  
+  .discoverAllButton:hover {
+    background-color: #ffffff; 
+    color: #0066d2; 
+    border: 1px solid #007bff;
+    padding: 10px 40px; 
+    border-radius: 5px; 
+    font-size: 15px; 
+    text-align: center; 
+    cursor: pointer; 
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out; 
+  }
+
+  .bg1 { background: #f4f7ff; border-radius: 10px; padding: 5px; }
+  .bg2 { background: #dfe7ff; border-radius: 10px; padding: 5px; }
+  .bg3 { background: #afcfff; border-radius: 10px; padding: 5px; }
+  .bg4 { background: #f4f7ff; border-radius: 10px; padding: 5px; }
+

@@ -7,7 +7,7 @@ import { auth } from "../../firebase";
 import LatestSummaries, { latestSummaries } from "./latest_summaries/latest_summaries";
 import SavedSummaries, { savedSummaries } from "./saved_summaries/saved_summaries";
 import PersonalizedRecommendations, { recommendations } from "./personalized_recom/presonalized_recom";
-import PopularTopics, { topics } from "./popular_topics/populartopics";
+import PopularTopics, { topics } from "./popular_topics/popular_topics";
 import FooterHome from "./footer_home/footer_home";
 
 

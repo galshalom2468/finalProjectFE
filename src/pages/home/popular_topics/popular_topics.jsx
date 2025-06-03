@@ -15,13 +15,19 @@ export default function PopularTopics({ topics }) {
         <span className={styles.title}>נושאים פופולריים</span>
       </div>
       <ul className={styles.list}>
-        {topics.map((item) => (
-          <li key={item.id}>
+        {topics.map((item, idx) => (
+          <li
+            key={item.id}
+            className={`${styles.listItem} ${styles[`bg${idx + 1}`]}`}
+          >
             <span className={styles.topic}>{item.topic}</span>
             <span className={styles.count}>{item.count} סיכומים</span>
           </li>
         ))}
       </ul>
+      <div className={styles.buttonWrapper}>
+        <button className={styles.discoverAllButton}>גלה עוד נושאים</button>
+      </div>
     </div>
   );
 }

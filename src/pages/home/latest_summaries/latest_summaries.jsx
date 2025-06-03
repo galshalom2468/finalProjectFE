@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./latest_summaries.module.css";
 import { FiFileText} from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 export const latestSummaries = [
   { id: 1, title: "מבוא לאלגברה לינארית", subject: "מתמטיקה", date: "לפני 2 שעות" },
@@ -9,6 +10,12 @@ export const latestSummaries = [
 ];
 
 export default function LatestSummaries({ summaries }) {
+  const navigate = useNavigate();
+
+  const handleHistoryClick = () => {
+    navigate("/history_page");
+  };
+
   return (
     <div className={styles.card}>
       <div className={styles.header}>
@@ -27,7 +34,7 @@ export default function LatestSummaries({ summaries }) {
         ))}
       </ul>
       <div className={styles.buttonWrapper}>
-        <button className={styles.historyButton}>היסטוריית הצפייה שלך</button>
+        <button className={styles.historyButton} onClick={handleHistoryClick}>צפה בהיסטוריית הצפייה</button>
       </div>
     </div>
   );

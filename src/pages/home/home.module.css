@@ -64,6 +64,7 @@
     transform: translateY(-50%);
     color: #b0b8c1;
     font-size: 1.2rem;
+    cursor: pointer;
   }
   
   .userSection {
@@ -110,7 +111,8 @@
   .greetingSection {
     margin-bottom: 32px;
     margin-top: 5px;
-  }
+    padding-top: 60px;
+    }
   
   .greetingSection h1 {
     font-size: 3rem;
@@ -287,6 +289,9 @@
     .gridContainer {
       grid-template-columns: 1fr 1fr;
     }
+    .greetingSection {
+      padding-top: 60px;
+    }
   }
   @media (max-width: 700px) {
     .gridContainer {
@@ -304,6 +309,7 @@
       width: 100%;
       margin: 0 0 12px 0;
     }
+  
   }
   @media (max-width: 600px) {
     .mainContent {
@@ -346,6 +352,9 @@
       grid-column: auto !important;
       grid-row: auto !important;
       width: 310px;
+    }
+    .greetingSection {
+      padding-top: 80px;
     }
     .card {
       padding: 10px;

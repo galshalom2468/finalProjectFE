@@ -5,6 +5,7 @@ import { LandingPage } from "../landing_page/landing_page";
 import { Help as HelpPage } from "../help/help";
 import { Login } from "../login/login.jsx"; 
 import { Register } from "../register/register.jsx";
+import { HistoryPage } from "../history_page/history_page.jsx";
 
 
 export const App = () => (
@@ -17,6 +18,7 @@ export const App = () => (
       <Route path="/help" element={<HelpPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/history_page" element={<HistoryPage />} />
       <Route path="*" element={<div>404 Page Not Found</div>} />
     </Routes>
     </div>

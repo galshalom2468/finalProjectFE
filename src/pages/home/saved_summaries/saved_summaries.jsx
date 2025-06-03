@@ -21,12 +21,14 @@ export default function SavedSummaries({ summaries }) {
             <span className={styles.summaryTitle}>{item.title}</span>
             <span className={styles.subject}>{item.subject}</span>
             <span className={styles.dateIcon}>
-              <span className={styles.date}>{item.date}</span>
-              
+              <span className={styles.date}>{item.date}</span>  
             </span>
           </li>
         ))}
       </ul>
+      <div className={styles.buttonWrapper}>
+        <button className={styles.allSavedButton}>נהל סיכומים שמורים</button>
+      </div>
     </div>
   );
 }
