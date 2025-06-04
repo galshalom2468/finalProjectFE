@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./history_page.module.css";
 import { FiEye, FiClock } from "react-icons/fi";
 import { FaCircle } from "react-icons/fa";
@@ -64,16 +64,22 @@ const historyData = [
 
 export function HistoryPage() {
   const navigate = useNavigate();
+  const [search, setSearch] = useState("");
 
   const handleBack = () => {
     navigate("/home");
   };
 
+  // סינון לפי שם הסיכום
+  const filteredSummaries = historyData.filter(item =>
+    item.title.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className={styles.historyPage}>
       <div className={styles.topBar}>
         <h1 className={styles.title}>
-        <FiClock className={styles.clockIcon} />
+          <FiClock className={styles.clockIcon} />
           היסטוריית הצפייה 
         </h1>
         <button className={styles.backButton} onClick={handleBack}>חזרה לבית</button>
@@ -82,10 +88,12 @@ export function HistoryPage() {
         <input
           className={styles.searchInput}
           placeholder="חפש בהיסטוריה..."
+          value={search}
+          onChange={e => setSearch(e.target.value)}
         />
       </div>
       <div className={styles.cardsContainer}>
-        {historyData.map((item) => (
+        {filteredSummaries.map((item) => (
           <div className={styles.card} key={item.id}>
             <div className={styles.cardHeader}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
@@ -93,7 +101,7 @@ export function HistoryPage() {
                   className={styles.circleIcon}
                   style={{ color: item.statusColor === "green" ? "#1db954" : "#e6a700" }}
                 />
-                <span className={styles.subjectTag} >
+                <span className={styles.subjectTag}>
                   {item.subject}
                 </span>
               </div>
