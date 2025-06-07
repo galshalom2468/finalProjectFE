@@ -1,0 +1,354 @@
+.libraryPage {
+  background: #f7f9fb;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  direction: rtl;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1px solid #e0e7ef;
+  padding: 18px 32px;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoSquare {
+  width: 32px;
+  height: 32px;
+  background: #3b83f6;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.logoText {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.navLinks {
+  background: #fff;
+  padding: 8px 18px;
+  font-size: 1.5rem;
+  color: #222;
+  font-weight: bold;
+  transition: background 0.2s;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.navLinks button {
+  background: none;
+  border: 1.5px solid #e7e7e7;
+  color: #222;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 6px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.navLinks button:hover {
+  background: #f0f4ff;
+}
+
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.searchFilterRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 32px 0 32px;
+  max-width: 1000px;
+  margin-bottom: 24px;
+}
+
+.searchInputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.searchInput {
+  width: 100%;
+  padding-left: 36px;
+  padding: 10px 16px;
+  border: 1.5px solid #e0e7ef;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  background: #fff;
+  outline: none;
+  direction: rtl;
+  text-align: right;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #b0b8c1;
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+.filterSelect {
+  padding: 10px 10px;
+  border: 1.5px solid #e0e7ef;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  background: #fff;
+  outline: none;
+}
+
+.filterSelect:hover {
+  cursor: pointer;
+}
+
+.summariesList {
+  list-style: none;
+  padding: 0 32px;
+  margin: 32px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.summaryCard {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  transition: box-shadow 0.2s;
+  max-width: 400px;
+}
+
+.summaryCard:hover {
+  box-shadow: 0 4px 24px rgba(59,131,246,0.10);
+  cursor: pointer;
+  background: #f0f4ff;
+  border: 1px solid #e7f0ff;
+}
+
+.summaryTitle {
+  flex: 2;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.summarySubject {
+  flex: 1;
+  font-size: 1.1rem;
+  color: #3b83f6;
+  text-align: center;
+}
+.summaryDate {
+  flex: 1;
+  font-size: 1.1rem;
+  color: #888;
+  text-align: left;
+}
+
+@media (max-width: 700px) {
+  .header, .searchFilterRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 8px 0 8px;
+  }
+  .summariesList {
+    padding: 0 8px;
+    gap: 10px;
+  }
+  .summaryCard {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 8px;
+  }
+  .logoText {
+    font-size: 1.3rem;
+  }
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  justify-items: stretch;
+}
+.card {
+  background: #fff;
+  border: 2px solid #e3eaf5;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 32px 28px 24px 28px;
+  min-width: 180px;
+  width: 100%;
+  max-width: 380px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  direction: rtl;
+  transition: box-shadow 0.1s;
+}
+.card:hover {
+  box-shadow: 0 4px 30px rgba(0,0,0,0.10);
+  cursor: pointer;
+  border-radius: 16px;
+  background-color: #edf2ff;
+}
+.title {
+  font-weight: bold;
+  color: #222;
+  font-size: 2.4rem;
+}
+.subject {
+  color: #3b83f6;
+  font-size: 1.8rem;
+}
+.date {
+  color: #888;
+  font-size: 1.6rem;
+}
+@media (max-width: 900px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.starsRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.star, .starHalf {
+  color: #3b83f6;
+  font-size: 2rem;
+}
+.starEmpty {
+  color: #cfd8e3;
+  font-size: 2rem;
+}
+.rating {
+  margin-right: 6px;
+  font-size: 14px;
+  color: #888;
+}
+
+.cardActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.viewBtn, .saveBtn {
+  font-size: 1.5rem;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #e3eaf5;
+  color: #2563eb;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+.viewBtn:hover {
+  background: #2563eb;
+  color: #fff;
+}
+.saveBtn {
+  background: #ffee9a;
+  color: #a47800;
+}
+.saveBtn:hover {
+  background: #ffe066;
+  color: #bfa100;
+}
+
+.savedCard {
+  background: #fcf7e5;
+  border-radius: 16px;
+}
+
+.createSummaryButton {
+  background: #1db954;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-right: 8px;
+  margin-left: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(30,185,84,0.08);
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+  outline: none;
+  min-width: 160px;
+  letter-spacing: 0.5px;
+}
+
+.createSummaryButton:hover,
+.createSummaryButton:focus {
+  background: #159943;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(30,185,84,0.15);
+}
+
+.adminControls {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  justify-content: flex-end;
+}
+
+.editButton,
+.deleteButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.editButton {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.editButton:hover {
+  background-color: #357abd;
+}
+
+.deleteButton {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #c0392b;
+}

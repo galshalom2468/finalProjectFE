@@ -1,36 +1,61 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./latest_summaries.module.css";
-import { FiFileText} from "react-icons/fi";
+import { FiFileText } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import { supabase } from '../../../config/supabase';
 
-export const latestSummaries = [
-  { id: 1, title: "מבוא לאלגברה לינארית", subject: "מתמטיקה", date: "לפני 2 שעות" },
-  { id: 2, title: "היסטוריה של מלחמת העולם השנייה", subject: "היסטוריה", date: "לפני יום" },
-  { id: 3, title: "מושגי יסוד בפיזיקה קוונטית", subject: "פיזיקה", date: "לפני 3 ימים" },
-];
-
-export default function LatestSummaries({ summaries }) {
+export default function LatestSummaries() {
   const navigate = useNavigate();
+  const [latestSummaries, setLatestSummaries] = useState([]);
+
+  useEffect(() => {
+    async function fetchLatestSummaries() {
+      const { data, error } = await supabase
+        .from('history')
+        .select('id, viewed_at, summary_id, summaries (title, subject, date)')
+        .order('viewed_at', { ascending: false })
+        .limit(20); // נביא 20 כדי לוודא שיש מספיק ייחודיים
+
+      if (error) {
+        console.error('שגיאה בטעינת הסיכומים האחרונים:', error);
+      } else {
+        // בנה מערך ייחודי של סיכומים (כל סיכום פעם אחת בלבד)
+        const uniqueMap = new Map();
+        data.forEach(item => {
+          if (!uniqueMap.has(item.summary_id)) {
+            uniqueMap.set(item.summary_id, item);
+          }
+        });
+        const uniqueSummaries = Array.from(uniqueMap.values()).slice(0, 4); // רק 4 אחרונים
+        setLatestSummaries(uniqueSummaries);
+      }
+    }
+    fetchLatestSummaries();
+  }, []);
 
   const handleHistoryClick = () => {
     navigate("/history_page");
   };
 
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('he-IL');
+  }
+
   return (
     <div className={styles.card}>
       <div className={styles.header}>
         <span className={styles.title}>סיכומים אחרונים</span>
-        <span className={styles.subtitle}>הסיכומים האחרונים שנצפו על ידך</span>
+        <span className={styles.subtitle}>הסיכומים האחרונים שנצפו</span>
       </div>
       <ul className={styles.list}>
-        {summaries.map((item) => (
-          <li key={item.id}>
+        {latestSummaries.map((item) => (
+          <li key={item.id} onClick={() => navigate(`/summary/${item.summary_id}`)} style={{cursor: "pointer"}}>
              <FiFileText className={styles.bookmarkIcon} />
-            <span className={styles.summaryTitle}>{item.title}</span>
-            <span className={styles.subject}>{item.subject}</span>
-            <span className={styles.date}>{item.date}</span>
+            <span className={styles.summaryTitle}>{item.summaries?.title}</span>
+            <span className={styles.subject}>{item.summaries?.subject}</span>
+            <span className={styles.date}>{item.summaries?.date ? formatDate(item.summaries.date) : ""}</span>
           </li>
-          
         ))}
       </ul>
       <div className={styles.buttonWrapper}>

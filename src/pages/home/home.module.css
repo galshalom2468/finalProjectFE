@@ -24,6 +24,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-right: 10px;
   }
   
   .header .logoSquare {
@@ -40,9 +41,30 @@
     color: #222;
   }
   
+
+  .libraryButton {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 24px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(59,131,246,0.07);
+  }
+  .libraryButton:hover {
+    background: #174ea6;
+    color: #fff;
+  }
+  
   .searchContainer {
-    position: relative;
-    width: 340px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 340px;
   }
   
   .searchInput {
@@ -55,16 +77,6 @@
     outline: none;
     direction: rtl;
     text-align: right;
-  }
-  
-  .searchIcon {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #b0b8c1;
-    font-size: 1.2rem;
-    cursor: pointer;
   }
   
   .userSection {
@@ -309,7 +321,12 @@
       width: 100%;
       margin: 0 0 12px 0;
     }
-  
+    .libraryButton {
+      width: 100%;
+      margin: 8px 0;
+      padding: 10px 0;
+      font-size: 1.1rem;
+    }
   }
   @media (max-width: 600px) {
     .mainContent {
@@ -379,3 +396,4 @@
       font-size: 1em;
     }
   }
+

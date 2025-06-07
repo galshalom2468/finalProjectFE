@@ -28,7 +28,7 @@
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #f0f0f0;
-    padding: 18px 0;
+    padding: 17.2px 0;
     font-size: 1.2rem;
     direction: rtl;
     margin-bottom: 10px;
@@ -83,6 +83,12 @@
     text-align: center; 
     cursor: pointer; 
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out; 
+  }
+
+  .discoverAllButton:hover {
+    background-color: #ecf5ff; 
+    color: #0056b3; 
+    border-color: #0056b3;
   }
 
   .bg1 { background: #f4f7ff; border-radius: 10px; padding: 5px; }

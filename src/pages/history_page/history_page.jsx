@@ -1,78 +1,73 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./history_page.module.css";
-import { FiEye, FiClock } from "react-icons/fi";
-import { FaCircle } from "react-icons/fa";
+import { FiClock } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-
-const historyData = [
-  {
-    id: 1,
-    title: "מבוא לפיזיקה קוונטית",
-    subject: "מדעים",
-    status: "הושלם",
-    statusColor: "green",
-    date: "לפני 2 שעות",
-    readTime: "5 דקות קריאה",
-    button: "קרא שוב",
-    tagColor: "green",
-  },
-  {
-    id: 2,
-    title: "היסטוריה של מלחמת העולם השנייה",
-    subject: "היסטוריה",
-    status: "בקריאה",
-    statusColor: "orange",
-    date: "אתמול",
-    readTime: "8 דקות קריאה",
-    button: "המשך קריאה",
-    tagColor: "orange",
-  },
-  {
-    id: 3,
-    title: "עקרונות הכלכלה המקרו",
-    subject: "כלכלה",
-    status: "הושלם",
-    statusColor: "green",
-    date: "לפני 3 ימים",
-    readTime: "6 דקות קריאה",
-    button: "קרא שוב",
-    tagColor: "green",
-  },
-  {
-    id: 4,
-    title: "שפות תכנות מודרניות",
-    subject: "טכנולוגיה",
-    status: "הושלם",
-    statusColor: "green",
-    date: "לפני שבוע",
-    readTime: "10 דקות קריאה",
-    button: "קרא שוב",
-    tagColor: "green",
-  },
-  {
-    id: 5,
-    title: "מבוא לאלגברה",
-    subject: "מתמטיקה",
-    status: "הושלם",
-    statusColor: "green",
-    date: "לפני 8 ימים",
-    readTime: "10 דקות קריאה",
-    button: "קרא שוב",
-    tagColor: "green",
-  },
-];
+import { supabase } from '../../config/supabase';
+import { getAuth } from "firebase/auth";
 
 export function HistoryPage() {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
+  const [historyData, setHistoryData] = useState([]);
+
+  useEffect(() => {
+    async function fetchHistory() {
+      const auth = getAuth();
+      const user = auth.currentUser;
+      const userId = user ? user.uid : null;
+
+      console.log('userId:', userId);
+
+      if (!userId) {
+        setHistoryData([]);
+        return;
+      }
+
+      const { data, error } = await supabase
+        .from('history')
+        .select('id, viewed_at, summary_id, summaries (title)')
+        .order('viewed_at', { ascending: false })
+        .limit(20);
+      
+      console.log('historyData:', data, error);
+
+      if (error) {
+        console.error('שגיאה בטעינת ההיסטוריה:', error);
+      } else {
+        setHistoryData(data);
+      }
+    }
+    fetchHistory();
+  }, []);
 
   const handleBack = () => {
     navigate("/home");
   };
 
-  // סינון לפי שם הסיכום
-  const filteredSummaries = historyData.filter(item =>
-    item.title.toLowerCase().includes(search.toLowerCase())
+  const handleView = async (id) => {
+    const { data: { user } } = await supabase.auth.getUser();
+    if (user) {
+      await supabase
+        .from('history')
+        .insert([{ 
+          summary_id: id,
+          user_id: user.uid,
+          viewed_at: new Date().toISOString()
+        }]);
+    }
+    navigate(`/summary/${id}`);
+  };
+
+  const uniqueSummariesMap = new Map();
+  historyData.forEach(item => {
+    if (!uniqueSummariesMap.has(item.summary_id)) {
+      uniqueSummariesMap.set(item.summary_id, item);
+    }
+  });
+  const uniqueSummaries = Array.from(uniqueSummariesMap.values());
+
+  const filteredSummaries = uniqueSummaries.filter(item =>
+    item.summaries?.title?.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
@@ -80,12 +75,21 @@ export function HistoryPage() {
       <div className={styles.topBar}>
         <h1 className={styles.title}>
           <FiClock className={styles.clockIcon} />
-          היסטוריית הצפייה 
+           הסיכומים האחרונים
         </h1>
-        <button className={styles.backButton} onClick={handleBack}>חזרה לבית</button>
+        <button 
+          id="backButton"
+          name="backButton"
+          className={styles.backButton} 
+          onClick={handleBack}
+        >
+          חזרה לבית
+        </button>
       </div>
       <div className={styles.searchRow}>
         <input
+          id="historySearch"
+          name="historySearch"
           className={styles.searchInput}
           placeholder="חפש בהיסטוריה..."
           value={search}
@@ -93,31 +97,40 @@ export function HistoryPage() {
         />
       </div>
       <div className={styles.cardsContainer}>
+        {historyData.length === 0 && (
+          <div className={styles.emptyMsg}>לא נמצאו סיכומים אחרונים</div>
+        )}
         {filteredSummaries.map((item) => (
-          <div className={styles.card} key={item.id}>
+          <div
+            className={styles.card}
+            key={item.id}
+            onClick={() => navigate(`/summary/${item.summary_id}`)}
+            style={{ cursor: "pointer" }}
+          >
             <div className={styles.cardHeader}>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <FaCircle
-                  className={styles.circleIcon}
-                  style={{ color: item.statusColor === "green" ? "#1db954" : "#e6a700" }}
-                />
-                <span className={styles.subjectTag}>
-                  {item.subject}
+              <span className={styles.summaryId}>#{item.summary_id}</span>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
+                <span className={styles.date}>
+                  {new Date(item.viewed_at).toLocaleDateString('he-IL')}
+                </span>
+                <span className={styles.time}>
+                  {new Date(item.viewed_at).toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' })}
                 </span>
               </div>
-              <span className={styles.date} style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                {item.date} <span className={styles.readTime}>· {item.readTime}</span>
-                <FiEye className={styles.eyeIconSmall} />
-              </span>
             </div>
             <div className={styles.cardBody}>
-              <span className={styles.cardTitle}>{item.title}</span>
+              <span className={styles.cardTitle}>{item.summaries?.title || "סיכום"}</span>
             </div>
             <div className={styles.cardFooter}>
-              <span className={styles.status} style={{ color: item.statusColor === "green" ? "#1db954" : "#e6a700" }}>
-                {item.status}
-              </span>
-              <button className={styles.actionButton}>{item.button}</button>
+              <button 
+                className={styles.actionButton}
+                onClick={e => {
+                  e.stopPropagation();
+                  handleView(item.summary_id);
+                }}
+              >
+                צפה
+              </button>
             </div>
           </div>
         ))}

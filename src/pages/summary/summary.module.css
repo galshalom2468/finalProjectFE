@@ -1,0 +1,205 @@
+.summaryPage {
+  background: #f7f9fb;
+  min-height: 100vh;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  direction: rtl;
+}
+
+.grid {
+  display: flex;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 24px 24px;
+}
+
+.sidePanel {
+  flex: 1;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.backButton {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #e3eaf5;
+  color: #2563eb;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: background 0.2s, color 0.2s;
+}
+.backButton:hover {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.metaBox {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.metaItem {
+  display: flex;
+  gap: 8px;
+  font-size: 1.6rem;
+  color: #444;
+}
+
+.metaLabel {
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.metaValue {
+  color: #222;
+}
+
+.contentPanel {
+  flex: 2.5;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 32px 36px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contentTitle {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 18px;
+}
+
+.text {
+  line-height: 1.7;
+  color: #222;
+  font-size: 1.6rem;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    flex-direction: column;
+    gap: 18px;
+    padding: 16px 4px;
+  }
+  .sidePanel, .contentPanel {
+    max-width: 100%;
+    padding: 18px 10px;
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
+}
+
+.error {
+  text-align: center;
+  padding: 40px;
+  color: #dc3545;
+  font-size: 18px;
+}
+
+.ratingBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  margin-top: 8px;
+}
+
+.ratingLabel {
+  font-size: 1.6rem;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.star {
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.saving {
+  font-size: 1rem;
+  color: #888;
+  margin-right: 8px;
+}
+
+.fileBox {
+  margin-top: 18px;
+}
+
+.downloadButton {
+  display: inline-block;
+  background: #2563eb;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.downloadButton:hover {
+  background: #1a47b8;
+}
+
+.adminControls {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.editButton, .deleteButton {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.editButton {
+  background-color: #3b83f6;
+  color: white;
+}
+
+.editButton:hover {
+  background-color: #2563eb;
+}
+
+.deleteButton {
+  background-color: #ef4444;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #dc2626;
+} 

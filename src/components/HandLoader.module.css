@@ -1,0 +1,174 @@
+.loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 260px;
+  height: 160px;
+  display: flex;
+  align-items: flex-end;
+  z-index: 1000;
+}
+.finger {
+  width: 48px;
+  height: 100%;
+  margin-right: 6px;
+  float: left;
+  position: relative;
+}
+.fingerItem {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px 16px 20px 20px;
+  background: #fff;
+}
+.fingerItem span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 12px 12px 0 12px;
+}
+.fingerItem span:before,
+.fingerItem span:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 5px;
+  background: #4492f4;
+  margin-bottom: 5px;
+}
+.fingerItem i {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 20px 20px 14px 14px;
+  background: #4492f4;
+}
+.finger1 {
+  animation: finger1 1.5s infinite ease-in-out;
+}
+.finger1 span {
+  animation: finger1span 1.5s infinite ease-in-out;
+}
+.finger1 i {
+  animation: finger1i 1.5s infinite ease-in-out;
+}
+.finger2 {
+  animation: finger2 1.5s infinite ease-in-out;
+}
+.finger2 span {
+  animation: finger2span 1.5s infinite ease-in-out;
+}
+.finger2 i {
+  animation: finger2i 1.5s infinite ease-in-out;
+}
+.finger3 {
+  animation: finger3 1.5s infinite ease-in-out;
+}
+.finger3 span {
+  animation: finger3span 1.5s infinite ease-in-out;
+}
+.finger3 i {
+  animation: finger3i 1.5s infinite ease-in-out;
+}
+.finger4 {
+  animation: finger4 1.5s infinite ease-in-out;
+}
+.finger4 span {
+  animation: finger4span 1.5s infinite ease-in-out;
+}
+.finger4 i {
+  animation: finger4i 1.5s infinite ease-in-out;
+}
+.lastFinger {
+  width: 58px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.lastFingerItem {
+  position: absolute;
+  right: 0;
+  top: 72px;
+  width: 110%;
+  height: 48px;
+  border-radius: 0 12px 32px 0;
+  background: #fff;
+  animation: finger5 1.5s infinite ease-in-out;
+}
+.lastFingerItem i {
+  position: absolute;
+  left: 0;
+  top: -18px;
+  width: 58px;
+  height: 18px;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 0 12px 0px 0;
+}
+.lastFingerItem i:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  height: 48px;
+  border-radius: 0 0 32px 32px;
+  background: #4492f4;
+}
+@keyframes finger1 {
+  0%, 20%, 41%, 100% { padding: 12px 0 5px 0; }
+  29%, 35% { padding: 4px 0 24px 0; }
+}
+@keyframes finger1span {
+  0%, 20%, 41%, 100% { top: 0; }
+  29%, 35% { top: -7px; }
+}
+@keyframes finger1i {
+  0%, 20%, 41%, 100% { bottom: 3px; height: 14px; border-radius: 10px 10px 7px 7px; }
+  29%, 35% { bottom: 8px; height: 12px; border-radius: 7px 7px 4px 4px; }
+}
+@keyframes finger2 {
+  0%, 24%, 45%, 100% { padding: 6px 0 2px 0; }
+  33%, 39% { padding: 2px 0 16px 0; }
+}
+@keyframes finger2span {
+  0%, 24%, 45%, 100% { top: 0; }
+  33%, 39% { top: -7px; }
+}
+@keyframes finger2i {
+  0%, 24%, 45%, 100% { bottom: 3px; height: 14px; border-radius: 10px 10px 7px 7px; }
+  33%, 39% { bottom: 8px; height: 12px; border-radius: 7px 7px 4px 4px; }
+}
+@keyframes finger3 {
+  0%, 28%, 49%, 100% { padding: 0 0 0 0; }
+  37%, 43% { padding: 0 0 12px 0; }
+}
+@keyframes finger3span {
+  0%, 28%, 49%, 100% { top: 0; }
+  37%, 43% { top: -7px; }
+}
+@keyframes finger3i {
+  0%, 28%, 49%, 100% { bottom: 3px; height: 14px; border-radius: 10px 10px 7px 7px; }
+  37%, 43% { bottom: 8px; height: 12px; border-radius: 7px 7px 4px 4px; }
+}
+@keyframes finger4 {
+  0%, 32%, 53%, 100% { padding: 8px 0 3px 0; }
+  41%, 47% { padding: 4px 0 20px 0; }
+}
+@keyframes finger4span {
+  0%, 32%, 53%, 100% { top: 0; }
+  41%, 47% { top: -7px; }
+}
+@keyframes finger4i {
+  0%, 32%, 53%, 100% { bottom: 3px; height: 14px; border-radius: 10px 10px 7px 7px; }
+  41%, 47% { bottom: 8px; height: 12px; border-radius: 7px 7px 4px 4px; }
+}
+@keyframes finger5 {
+  0%, 34%, 60%, 100% { top: 32px; right: 0; border-radius: 0 5px 14px 0; transform: rotate(0deg); }
+  43%, 50% { top: 20px; right: 2px; border-radius: 0 8px 20px 0; transform: rotate(-12deg); }
+} 
